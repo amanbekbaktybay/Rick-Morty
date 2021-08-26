@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.character{
+  width: 375px;
+  display: flex;
+  align-items: center;
+  scroll-snap-align: start;
+  margin: 24px 16px;
+  height: 75px;
+  &__status{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 16px;
+    /* identical to box height, or 160% */
+    margin: 0;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    color: #43D049;
+  }
+  &__full-name{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    margin: 0;
+    letter-spacing: 0.5px;
+
+    color: #FFFFFF;
+  }
+  &__gender-species{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    margin: 0;
+
+
+
+    color: #6E798C;
+  }
+  &__img{
+     width: 75px;
+     height: 75px;
+   }
+
+  .info{
+    margin: auto 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 65px;
+  }
+}

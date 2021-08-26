@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+$theme-bg-input-color: #152A3A;
+$theme-bg-color: #0B1E2D;
+.wrapper{
+  display: flex;
+  width: 375px;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+.search{
+  margin: 12px 0;
+  width: 343px;
+  border-radius: 100px;
+  height: 48px;
+  text-align: center;
+  background-color: $theme-bg-input-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  &__input{
+    background: none;
+    border: none;
+    width: 235px;
+    height: 24px;
+    color: #f1f1f1;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder{
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #5B6975;
+    }
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  &__search-icon{
+    margin: auto 10px;
+  }
+  .search_filter-icon{
+    margin: auto 10px;
+  }
+}

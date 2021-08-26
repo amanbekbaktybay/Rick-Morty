@@ -1,0 +1,47 @@
+$theme-bg-nav-color: #152A3A;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.navigation{
+  background-color: $theme-bg-nav-color;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 375px;
+  position: fixed;
+  bottom: -1px;
+  height: 60px;
+  &__characters{
+    fill: #43D049;
+  }
+  &__title{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+    color: #5B6975;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+    width: 20px;
+    align-items: center;
+    justify-content: center;
+    h5{
+      margin: 0;
+    }
+  }
+  &-icon{
+    margin: 0;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.selected{
+  color: #43D049;
+}
