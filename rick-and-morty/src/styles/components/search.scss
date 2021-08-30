@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-$theme-bg-input-color: #152A3A;
-$theme-bg-color: #0B1E2D;
+@import "../variables";
+
 .wrapper{
   display: flex;
   width: 375px;
@@ -34,7 +34,7 @@ $theme-bg-color: #0B1E2D;
       font-weight: normal;
       font-size: 16px;
       line-height: 24px;
-      color: #5B6975;
+      color: $theme-placeholder-color;
     }
     border-right: 1px solid rgba(255, 255, 255, 0.1);
   }

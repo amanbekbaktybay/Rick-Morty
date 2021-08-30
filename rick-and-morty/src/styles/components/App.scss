@@ -1,0 +1,21 @@
+@import "../variables";
+input{
+    &:focus {
+        outline: none;
+    }
+    border: none;
+}
+button{
+    border: none;
+}
+html[data-theme="dark"]{
+    $theme-bg-color:#FFF;
+}
+
+.App{
+    width: 375px;
+    text-align: center;
+    height: 812px;
+}
+
+

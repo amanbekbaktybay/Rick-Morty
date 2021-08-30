@@ -1,0 +1,19 @@
+@import "../variables";
+
+.button{
+  &__button{
+    width: 319px;
+    height: 48px;
+    background-color: $bg-button-color;
+    border-radius: 12px;
+    align-items: center;
+    margin: 24px auto;
+
+    font-family: 'Roboto',SansSerif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+  }
+}

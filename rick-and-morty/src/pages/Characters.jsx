@@ -1,8 +1,11 @@
-import {Search} from "./Search";
-import {Character} from "./Character";
-import {Navigation} from "./Navigation";
-import './styles/Characters.scss'
+import {Search} from "../Search";
+import {Character} from "../Character";
+import {Navigation} from "../Navigation";
+import '../styles/components/Characters.scss'
 export function Characters(props){
+
+
+
     return (
         <div className="container">
             <Search placeHolder="Найти Персонажа"/>
