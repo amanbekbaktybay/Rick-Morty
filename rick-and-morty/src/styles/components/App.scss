@@ -17,5 +17,8 @@ html[data-theme="dark"]{
     text-align: center;
     height: 812px;
 }
-
+.container{
+    background-color: $theme-bg-color;
+    height: 812px;
+}
 

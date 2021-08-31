@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: start;
+  width: 320px;
   &__label{
     color: #f1f1f1;
     align-self: start;
@@ -25,6 +27,8 @@
   }
   &__input{
     background-color: $theme-bg-input-color;
+    margin-left: 16px;
+    width: 200px;
     &::placeholder{
       color: $theme-placeholder-color;
       font-family: 'Roboto',sans-serif;

@@ -1,23 +1,13 @@
-import "../styles/components/LogIn.scss";
+import "../styles/components/authorization.scss";
 import {Button} from "../components/ui/base/Button";
 import {PasswordIcon} from "../components/ui/base/PasswordIcon";
 import {LoginIcon} from "../components/ui/base/LoginIcon";
 import {Eye} from "../components/ui/base/Eye-icon";
 import {RegistrationInput} from "../components/ui/base/RegistrationInput";
-
+import {submitHandle,showOrHidePassword} from "../scripts"
 export function LogIn(props){
 
-    const submitHandle = () => {
-        let $button = document.querySelector("#form")
-        $button.addEventListener("submit",event => {
-            event.preventDefault();
-        })
-    }
 
-    const showOrHidePassword = (elementId) => {
-        const element = document.querySelector(elementId) ;
-        element.type === "password"?element.type = "text":element.type = "password";
-    }
 
     return(
         <div className="log-in">

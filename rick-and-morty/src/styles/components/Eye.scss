@@ -1,1 +1,10 @@
 @import "../variables";
+.eye-wrapper{
+  width: 30px;
+  text-align: center;
+  svg{
+    margin-left: 20px;
+    stroke-width: 1.5;
+    stroke: $theme-placeholder-color;
+  }
+}
