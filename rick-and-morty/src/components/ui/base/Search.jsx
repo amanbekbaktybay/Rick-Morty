@@ -1,4 +1,4 @@
-import './styles/components/search.scss'
+import '../../../styles/components/search.scss'
 export function Search(props){
     return(
         <div className="wrapper">

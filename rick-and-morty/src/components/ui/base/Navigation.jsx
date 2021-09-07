@@ -1,4 +1,4 @@
-import './styles/components/navigation.scss'
+import '../../../styles/components/navigation.scss'
 
 export function Navigation(props){
     return(

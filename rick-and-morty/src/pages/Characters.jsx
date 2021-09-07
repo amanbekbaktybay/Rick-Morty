@@ -1,6 +1,6 @@
-import {Search} from "../Search";
-import {Character} from "../Character";
-import {Navigation} from "../Navigation";
+import {Search} from "../components/ui/base/Search";
+import {Character} from "../components/ui/base/Character";
+import {Navigation} from "../components/ui/base/Navigation";
 import '../styles/components/Characters.scss'
 export function Characters(props){
 
@@ -73,9 +73,10 @@ export function Characters(props){
                         />
                     </div>
 
-                    <Navigation/>
+
 
                 </div>
+            <Navigation/>
         </div>
     );
 }

@@ -1,0 +1,37 @@
+@import "../variables";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.locations{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 375px;
+  max-height: 812px;
+  &__wrapper{
+  }
+  &__info{
+    text-align: left;
+  }
+  &__counter{
+    color: $theme-placeholder-color;
+    font-family: 'Roboto',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 24px 16px;
+  }
+  &__location-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-y: auto;
+    max-height: 640px;
+    scroll-snap-type: y mandatory;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}

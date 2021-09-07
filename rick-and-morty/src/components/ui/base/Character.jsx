@@ -1,4 +1,4 @@
-import './styles/components/Character.scss'
+import '../../../styles/components/Character.scss'
 export function Character(props){
     return (
         <div className="character">
