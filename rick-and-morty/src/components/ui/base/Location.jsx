@@ -5,11 +5,11 @@ export function Location(props){
     return(
         <div className="location">
             <div className="location__img">
-                <img src="assets/images/earth-img.png" alt=""/>
+                <img src={props.link} alt=""/>
             </div>
             <div className="location__title">
-                <h3>Земля С-137</h3>
-                <p>Мир - Измерение С-137</p>
+                <h3>{props.name}</h3>
+                <p>{props.type} - {props.measurements}</p>
             </div>
         </div>
     );

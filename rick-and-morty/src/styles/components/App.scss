@@ -19,7 +19,9 @@ html[data-theme="dark"]{
 }
 .container{
     background-color: $theme-bg-color;
-    height: 812px;
+    height: 752px;
+    position: absolute;
+    top: 0;
     width: 375px;
 }
 
