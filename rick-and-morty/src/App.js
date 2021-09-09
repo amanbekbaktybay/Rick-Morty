@@ -13,9 +13,10 @@ import {Registration} from "./pages/Registration";
 import {Locations} from "./pages/Locations";
 import {Location} from "./components/ui/base/Location";
 import {Navigation} from "./components/ui/base/Navigation";
+import {Settings} from "./pages/Settings";
 
 function App() {
-    // document.documentElement.setAttribute("data-theme","dark");
+
     const changeNavigationIconColor = (idSvg,idTitle) =>
     {
         document.getElementById(idSvg).style.color = "#43D049";
@@ -24,6 +25,7 @@ function App() {
   return (
 
       <Router>
+
           <div className="App">
               <div className="wrapper">
                   <div className="navigation">
@@ -47,17 +49,23 @@ function App() {
                           </Link>
                       </div>
                       <div className="navigation__wrapper">
+
                           <img src="assets/episodes-icon.svg " alt="" className="navigation__episodes navigation-icon"/>
                           <h5 className="navigation__title">Эпизоды</h5>
                       </div>
                       <div className="navigation__wrapper">
-                          <img src="assets/settings-icon.svg" alt="" className="navigation__settings navigation-icon"/>
-                          <h5 className="navigation__title">Настройки</h5>
+                          <Link to="/settings">
+                              <img src="assets/settings-icon.svg" alt="" className="navigation__settings navigation-icon"/>
+                              <h5 className="navigation__title">Настройки</h5>
+                          </Link>
                       </div>
                   </div>
               </div>
 
               <Switch>
+                  <Route path="/">
+                      <LogIn/>
+                  </Route>
                   <Route path="/characters">
                       <Characters></Characters>
                   </Route>
@@ -68,7 +76,10 @@ function App() {
                       <Characters></Characters>
                   </Route>
                   <Route path="/settings">
-                      <Characters></Characters>
+                      <Settings></Settings>
+                  </Route>
+                  <Route path="/registration">
+                      <Registration></Registration>
                   </Route>
               </Switch>
           </div>

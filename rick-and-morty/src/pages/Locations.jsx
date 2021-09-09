@@ -6,10 +6,10 @@ import {useEffect, useState} from "react";
 import {Character} from "../components/ui/base/Character";
 
 export function Locations(props){
-    const locationsArray = [];
 
+    const [buffer,setBuffer] = useState([]);
     const [array,setArray] = useState([]);
-
+    const [search,setSearch] = useState("");
 
     async function fetchLocations (){
         const response = await fetch("http://173.249.20.184:7001/api/Locations/GetAll?PageNumber=1&PageSize=10")
@@ -18,8 +18,7 @@ export function Locations(props){
             const responseArray = data.data;
 
             responseArray.forEach(item => {
-
-                locationsArray.push(
+                buffer.push(
                     <Location
                         link={item["imageName"]}
                         fullName={item.name}
@@ -30,24 +29,28 @@ export function Locations(props){
                 );
             });
 
-
-            // setArray(charactersArray);
             console.log("data has taken up!")
         })
     }
 
 
-
     useEffect(
         async () => {
-            await fetchLocations();
-            console.log(array)
-            console.log(array.length)
-            setArray(locationsArray)
-        },[]);
+            if (buffer.length === 0){
+                await fetchLocations();
+            }
+
+            if (search) {
+                let filteredArray = buffer.filter(item => item.props.fullName.toLocaleLowerCase().includes(search.trim().toLocaleLowerCase()));
+                setArray(filteredArray);
+            }else{
+                setArray(buffer);
+            }
+        },[search]);
+
     return(
         <div className="locations container">
-            <Search placeHolder="Найти локацию"/>
+            <Search placeHolder="Найти локацию" callback={setSearch}/>
             <div className="locations__wrapper">
 
                 <div className="locations__info">

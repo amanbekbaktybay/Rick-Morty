@@ -5,8 +5,9 @@ import '../styles/components/Characters.scss'
 import {useEffect, useState} from "react";
 export function Characters(props){
 
-    const charactersArray = [];
+    const [buffer, setBuffer] = useState([]);
 
+    const [search,setSearch] = useState("");
     const [array,setArray] = useState([]);
 
 
@@ -19,7 +20,7 @@ export function Characters(props){
             responseArray.forEach(item => {
                 const status = item.status?"живой":"мертвый";
                 const gender = item.gender?"женский":"мужской";
-                charactersArray.push(
+                buffer.push(
                     <Character
                         link={item["imageName"]}
                         status={status}
@@ -32,7 +33,7 @@ export function Characters(props){
             });
 
 
-            // setArray(charactersArray);
+
             console.log("data has taken up!")
         })
      }
@@ -41,17 +42,26 @@ export function Characters(props){
 
     useEffect(
         async () => {
-            await fetchCharacters();
-            console.log(array)
-            console.log(array.length)
-            setArray(charactersArray)
-        },[]);
+            if(buffer.length === 0) {
+                await fetchCharacters();
+                setArray(buffer);
+                console.log("fetched")
+            }
+            if (search) {
+                console.log(buffer.length)
+                let filteredArray = buffer.filter(item => item.props.fullName.toLocaleLowerCase().includes(search.trim().toLocaleLowerCase()));
+                setArray(filteredArray);
+            }else{
+                console.log(buffer.length)
+                setArray(buffer);
+            }
+        },[search]);
 
 
 
     return (
         <div className="container">
-            <Search placeHolder="Найти Персонажа"/>
+            <Search placeHolder="Найти Персонажа" callback={setSearch}/>
             <div className="characters">
                 <div className="characters__info">
                         <div className="characters__counter">Всего Персонажей:  {array.length}</div>

@@ -8,7 +8,7 @@ export function Location(props){
                 <img src={props.link} alt=""/>
             </div>
             <div className="location__title">
-                <h3>{props.name}</h3>
+                <h3>{props.fullName}</h3>
                 <p>{props.type} - {props.measurements}</p>
             </div>
         </div>
