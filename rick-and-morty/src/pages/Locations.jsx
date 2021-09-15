@@ -49,7 +49,7 @@ export function Locations(props){
         },[search]);
 
     return(
-        <div className="locations container">
+        <div className="locations">
             <Search placeHolder="Найти локацию" callback={setSearch}/>
             <div className="locations__wrapper">
 

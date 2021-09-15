@@ -11,17 +11,23 @@ button{
 html[data-theme="dark"]{
     $theme-bg-color:#FFF;
 }
-
+html{
+    background-color: $theme-bg-color;
+}
+body{
+    min-height: calc(var(--vh, 1vh) * 100);
+}
 .App{
-    width: 375px;
+    width: 100%;
     text-align: center;
-    height: 812px;
+    height: 100%;
 }
 .container{
     background-color: $theme-bg-color;
-    height: 752px;
+    height: calc(100% - 60px);
     position: absolute;
     top: 0;
-    width: 375px;
+    width: 100%;
+    overflow: hidden;
 }
 

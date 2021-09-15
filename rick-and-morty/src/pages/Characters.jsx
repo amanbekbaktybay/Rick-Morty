@@ -65,12 +65,13 @@ export function Characters(props){
             <div className="characters">
                 <div className="characters__info">
                         <div className="characters__counter">Всего Персонажей:  {array.length}</div>
-                        <div className="characters__layout"><img src="assets/layout-icon.svg" alt=""/></div>
+                        <div className="characters__layout"><img src="assets/images/layout-icon.svg" alt=""/></div>
                 </div>
-                    <div className="characters__blocks">
+
+                <div className="characters__blocks">
                         {array}
-                    </div>
                 </div>
+            </div>
         </div>
     );
 

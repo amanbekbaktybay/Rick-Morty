@@ -11,9 +11,9 @@ export function LogIn(props){
 
 
     return(
-        <div className="log-in container">
+        <div className="log-in">
             <div className="log-in__img-wrapper">
-                <img src="assets/log-in-img.png" alt="" className="log-in__img"/>
+                <img src="assets/images/log-in-img.png" alt="" className="log-in__img"/>
             </div>
             <div className="log-in__form-wrapper">
                 <form action="" id="form" className="log-in__form">
@@ -22,17 +22,17 @@ export function LogIn(props){
 
 
                     <span>
+                        <Link to="/settings">
                         <Button
                             callback={() => {
                             submitHandle();
                             }}
                                 text="Войти"
-                        >
-
-                        </Button>
+                        />
+                        </Link>
                     </span>
                 </form>
-                <div className="log-in__offer"><p>У вас еще нет аккаунта? <Link to="/registration"><a href="">Создать</a></Link></p></div>
+                <div className="log-in__offer"><p>У вас еще нет аккаунта? <Link to="/registration">Создать</Link></p></div>
             </div>
 
         </div>

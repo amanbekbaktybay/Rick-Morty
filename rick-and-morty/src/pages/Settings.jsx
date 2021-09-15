@@ -1,7 +1,22 @@
 import "../styles/components/Settings.scss";
 import {ArrowBack} from "../components/ui/base/ArrowBack";
+import {Link} from "react-router-dom";
 
 export function Settings(props){
+
+    const userName = sessionStorage.getItem("userName");
+    console.log(userName);
+
+   async function fetchUserDataByUserName(){
+       const response = await fetch("http://173.249.20.184:7001/api/Account/GetProfile?userName=amanbekbaktybay");
+
+      const responseJson =  response.json();
+      const userAllData = responseJson.then(data => data.result);
+       console.log(userAllData)
+   }
+
+   fetchUserDataByUserName();
+
 
     return(
         <div className="settings container">
@@ -14,7 +29,7 @@ export function Settings(props){
                     <div className="settings__profile-info">
                         <img src="assets/images/settings-ava.png" alt="" className="settings__ava"/>
                         <div className="settings__fullName">
-                            <h3>Amanbek Baktybay</h3>
+                            <h3>{}</h3>
                             <p>Aman</p>
                         </div>
                     </div>

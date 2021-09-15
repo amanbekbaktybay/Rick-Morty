@@ -5,17 +5,14 @@
 }
 .log-in{
   background-color: $theme-bg-color;
-  height: 100%;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  max-width: 812px;
+  justify-content: space-around;
+  align-items: center;
+  min-height: calc(var(--vh, 1vh) * 100);
 
   &__offer{
-    //margin: 28px auto;
-    position: relative;
-    bottom: 28px;
+
     a{
       text-decoration: none;
       color:#43D049;
@@ -32,13 +29,11 @@
   }
   &__form-wrapper{
     height: 300px;
-    position: relative;
-    bottom: 80px;
   }
   &__img-wrapper{
-    margin: 64px 75px;
     width: 267.83px;
     height: 376.22px;
+    text-align: center;
   }
   &__img{
     width: 267.83px;
@@ -49,8 +44,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 28px;
-
   }
 }
 

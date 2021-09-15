@@ -14,7 +14,14 @@ export function RegistrationInput(props){
             <label className="registration-input__label" htmlFor={props.id}>{props.labelText}</label>
             <span className="registration-input__wrapper">
                         {icon}
-                        <input type="text" id={props.id} className="registration-input__input" placeholder={props.placeholder}/>
+                        <input
+                            type="text"
+                            id={props.id}
+                            className="registration-input__input"
+                            placeholder={props.placeholder}
+                            onChange={event => props.onChange(event.target.value)}
+
+                        />
                         {eyeIcon}
             </span>
         </div>

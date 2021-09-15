@@ -4,6 +4,7 @@
 .settings{
   display: flex;
   justify-content: center;
+  min-height: calc((var(--vh, 1vh) * 100) - 60px);
   &__wrapper{
     width: 90%;
       nav{
