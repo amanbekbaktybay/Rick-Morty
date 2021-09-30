@@ -5,13 +5,15 @@
   display: flex;
   justify-content: center;
   min-height: calc((var(--vh, 1vh) * 100) - 60px);
+  height: calc((var(--vh, 1vh) * 100) - 60px);
   &__wrapper{
     width: 90%;
       nav{
-        margin-top: 20px;
+        margin-top: 2vh;
       display: flex;
       align-items: center;
       justify-content: flex-start;
+        height: 5vh;
       h2{
         margin-left: 25px;
         font-family: 'Roboto',sans-serif;
@@ -26,10 +28,10 @@
 
   }
   &__profile{
-    margin-top: 20px;
+    margin-top: 3vh;
     border-bottom: 1px solid #152A3A;
-    padding-bottom: 36px;
-    height: 150px;
+    padding-bottom: 5vh;
+    height: 20vh;
       &-info{
         height: 80px;
         display: flex;
@@ -71,7 +73,7 @@
     box-sizing: border-box;
     border-radius: 12px;
     color: #22A2BD;
-    padding: 8px 20px;
+    padding: 1vh 2vh;
     width: 335px;
     height: 40px;
     margin: 30px auto;
@@ -109,7 +111,7 @@
     text-align: left;
     border-bottom: 1px solid #152A3A;
     padding-bottom: 36px;
-    height: 84px;
+    height: 10vh;
     h2{
       font-family: 'Roboto',sans-serif;
       font-style: normal;
@@ -128,6 +130,7 @@
     text-align: left;
     border-bottom: 1px solid #152A3A;
     padding-bottom: 36px;
+    height: 10vh;
     h2{
       font-family: 'Roboto',sans-serif;
       font-style: normal;
@@ -152,6 +155,7 @@
   &__app-version{
     margin-top: 36px;
     text-align: left;
+    height: 5vh;
     h2{
       font-family: 'Roboto',sans-serif;
       font-style: normal;

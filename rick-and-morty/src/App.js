@@ -16,6 +16,7 @@ import {Navigation} from "./components/ui/base/Navigation";
 import {Settings} from "./pages/Settings";
 import PublicRoute from "./router/PublickRoutes";
 import PrivateRoute from "./router/PrivateRoutes";
+import {Episodes} from "./pages/Episodes";
 
 function App() {
 
@@ -56,6 +57,14 @@ function App() {
                         isAuthenticated={isAuthenticated}
                     >
                         <Locations/>
+                        <Navigation/>
+                    </PrivateRoute>
+
+                    <PrivateRoute
+                        path="/episodes"
+                        isAuthenticated={isAuthenticated}
+                    >
+                        <Episodes/>
                         <Navigation/>
                     </PrivateRoute>
 

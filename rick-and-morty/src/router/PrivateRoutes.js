@@ -4,8 +4,6 @@ import {
 } from 'react-router-dom';
 
 function PrivateRoute({ children, isAuthenticated, ...rest }) {
-    const tf = isAuthenticated;
-    console.log(tf);
     return (
         <Route
             {...rest}

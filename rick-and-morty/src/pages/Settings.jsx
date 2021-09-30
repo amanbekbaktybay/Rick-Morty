@@ -1,21 +1,26 @@
 import "../styles/components/Settings.scss";
 import {ArrowBack} from "../components/ui/base/ArrowBack";
 import {Link} from "react-router-dom";
+import {useState} from "react";
 
 export function Settings(props){
 
     const userName = sessionStorage.getItem("userName");
-    console.log(userName);
+    const [fullName,setFullName] = useState("");
 
    async function fetchUserDataByUserName(){
-       const response = await fetch("http://173.249.20.184:7001/api/Account/GetProfile?userName=amanbekbaktybay");
+       const response = await fetch(`http://173.249.20.184:7001/api/Account/GetProfile?userName=${userName}`);
 
       const responseJson =  response.json();
-      const userAllData = responseJson.then(data => data.result);
-       console.log(userAllData)
+      responseJson
+          .then(data => {
+                 setFullName(data["data"].firstName + " " + data["data"].lastName);
+          })
+
    }
 
-   fetchUserDataByUserName();
+
+    fetchUserDataByUserName();
 
 
     return(
@@ -29,8 +34,8 @@ export function Settings(props){
                     <div className="settings__profile-info">
                         <img src="assets/images/settings-ava.png" alt="" className="settings__ava"/>
                         <div className="settings__fullName">
-                            <h3>{}</h3>
-                            <p>Aman</p>
+                            <h3>{fullName}</h3>
+                            <p>{userName}</p>
                         </div>
                     </div>
                     <button className="settings__button">

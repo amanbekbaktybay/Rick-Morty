@@ -1,0 +1,41 @@
+@import "../variables";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.episodes{
+
+  &__seasons{
+      display: flex;
+    overflow-x: scroll;
+  }
+
+  &__season{
+    min-width: 102px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+  }
+  &__season-num{
+    width: 70px;
+    height: 100%;
+    font-family: 'Roboto',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    //border-bottom: #FFFFFF 2px solid;
+    //border-bottom-left-radius: 2px;
+    //border-bottom-right-radius: 2px;
+  }
+  &__block{
+    overflow-y: auto;
+    max-height: calc(var(--vh, 1vh) * 80);
+    scroll-snap-type: y mandatory;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}

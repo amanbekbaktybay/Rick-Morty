@@ -13,8 +13,10 @@ import {
 } from 'react-router-dom';
 import {Settings} from "./Settings";
 import {Link} from "react-router-dom";
-
+import {browserHistory} from 'react-router';
 export function Registration(...props){
+
+
 
     let userName = "";
     let password = "";
@@ -37,10 +39,13 @@ export function Registration(...props){
           headers: {
               'content-type': 'application/json'
           }
-        }).then(() => {
-          console.log("successfully");
-          sessionStorage.setItem("isLoggedIn","true");
-          sessionStorage.setItem("userName",userName);
+        }).then((response) => {
+            if (response.ok) {
+                console.log("successfully");
+                sessionStorage.setItem("isLoggedIn", "true");
+                sessionStorage.setItem("userName", userName);
+                window.location.assign("/settings");
+            }
       })
 
     }

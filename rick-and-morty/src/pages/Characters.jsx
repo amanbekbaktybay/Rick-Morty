@@ -34,7 +34,6 @@ export function Characters(props){
 
 
 
-            console.log("data has taken up!")
         })
      }
 
@@ -45,14 +44,11 @@ export function Characters(props){
             if(buffer.length === 0) {
                 await fetchCharacters();
                 setArray(buffer);
-                console.log("fetched")
             }
             if (search) {
-                console.log(buffer.length)
                 let filteredArray = buffer.filter(item => item.props.fullName.toLocaleLowerCase().includes(search.trim().toLocaleLowerCase()));
                 setArray(filteredArray);
             }else{
-                console.log(buffer.length)
                 setArray(buffer);
             }
         },[search]);
@@ -60,8 +56,7 @@ export function Characters(props){
 
 
     return (
-        <div className="container">
-            <Search placeHolder="Найти Персонажа" callback={setSearch}/>
+        <div className="container">            <Search placeHolder="Найти Персонажа" callback={setSearch}/>
             <div className="characters">
                 <div className="characters__info">
                         <div className="characters__counter">Всего Персонажей:  {array.length}</div>

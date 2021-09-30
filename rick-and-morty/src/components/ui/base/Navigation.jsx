@@ -35,9 +35,10 @@ export function Navigation(props){
                     </Link>
                 </div>
                 <div className="navigation__wrapper">
-
-                    <img src="assets/images/episodes-icon.svg " alt="" className="navigation__episodes navigation-icon"/>
-                    <h5 className="navigation__title">Эпизоды</h5>
+                    <Link to="/episodes">
+                        <img src="assets/images/episodes-icon.svg " alt="" className="navigation__episodes navigation-icon"/>
+                        <h5 className="navigation__title">Эпизоды</h5>
+                    </Link>
                 </div>
                 <div className="navigation__wrapper">
                     <Link to="/settings">
