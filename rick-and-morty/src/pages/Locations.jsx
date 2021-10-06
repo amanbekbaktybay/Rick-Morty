@@ -12,7 +12,7 @@ export function Locations(props){
     const [search,setSearch] = useState("");
 
     async function fetchLocations (){
-        const response = await fetch("http://173.249.20.184:7001/api/Locations/GetAll?PageNumber=1&PageSize=10")
+        const response = await fetch("http://173.249.20.184:7001/api/Locations/GetAll?PageNumber=1&PageSize=13")
         const responseJson = response.json()
         await responseJson.then(data => {
             const responseArray = data.data;

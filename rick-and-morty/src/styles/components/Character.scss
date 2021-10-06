@@ -7,18 +7,16 @@
   scroll-snap-align: start;
   margin: 24px 16px;
   height: 75px;
+  flex-direction: row;
   &__status{
-    font-family: Roboto;
+    font-family: 'Roboto',sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 10px;
     line-height: 16px;
-    /* identical to box height, or 160% */
     margin: 0;
-
     letter-spacing: 1.5px;
     text-transform: uppercase;
-
     color: #43D049;
   }
   &__full-name{
@@ -27,10 +25,8 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    /* identical to box height, or 150% */
     margin: 0;
     letter-spacing: 0.5px;
-
     color: #FFFFFF;
   }
   &__gender-species{
@@ -41,23 +37,45 @@
     line-height: 16px;
     letter-spacing: 0.5px;
     margin: 0;
-
-
-
     color: #6E798C;
   }
   &__img{
-     width: 75px;
-     height: 75px;
     border-radius: 50%;
+    width: 75px;
+    height: 75px;
    }
 
-  .info{
+  &__info{
     margin: auto 18px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    text-align: left;
     justify-content: space-around;
     height: 65px;
   }
+}
+
+
+.two-in-line{
+  width: 120px;
+  height: 120px;
+}
+
+.fl-col{
+  flex-direction: column;
+  height: 250px;
+  width: 50%;
+  display: inline-block;
+  margin: 0;
+}
+
+.align-center{
+   text-align: center;
+  height: 65px;
+}
+
+.txt-stl-character-status{
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
 }

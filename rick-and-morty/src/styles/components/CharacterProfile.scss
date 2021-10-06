@@ -1,0 +1,80 @@
+@import "../variables";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.character-profile{
+  &__person{
+    min-height: calc((var(--vh, 1vh) * 100) - 60px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__ava{
+    min-height: calc((var(--vh, 1vh) * 47));
+    width: 100%;
+
+  }
+  &__ava-bg{
+    background-image: url("https://reasonish.com/wp-content/uploads/2017/09/Rick-and-Morty-2-1030x687.jpg");
+    width: 100%;
+    height: calc((var(--vh, 1vh) * 37));
+    background-size: cover;
+    background-repeat:  no-repeat;
+    &-wrapper{
+      backdrop-filter: blur(8px);
+      width: 100%;
+      height: 100%;
+      img{
+        width: 146px;
+        height: 146px;
+        position: absolute;
+        top: calc((var(--vh, 1vh) * 26));
+        left: 0; right: 0;
+        margin-right: auto;margin-left: auto;
+        border: 8px $theme-bg-color solid;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__personal-data{
+    width: 96%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+      font-family: 'Roboto',sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 34px;
+      line-height: 40px;
+      letter-spacing: 0.25px;
+      color: #FFFFFF;
+    }
+  }
+  &__status{
+    font-family: 'Roboto',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #43D049;
+  }
+
+  &__description{
+    text-align: left;
+    font-family: 'Roboto',sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+  }
+}
+
+
+

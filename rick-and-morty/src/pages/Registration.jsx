@@ -57,7 +57,11 @@ export function Registration(...props){
         <div className="registration">
             <div className="registration__wrapper">
                     <div className="registration__arrow-back-wrapper">
-                        <ArrowBack/>
+                        <ArrowBack
+                            callback={() => {
+                                window.history.back();
+                            }}
+                        />
                     </div>
                 <div className="registration__title-wrapper">
                     <h1 className="registration__title">Создать аккаунт</h1>

@@ -3,16 +3,18 @@ import {Character} from "../components/ui/base/Character";
 import {Navigation} from "../components/ui/base/Navigation";
 import '../styles/components/Characters.scss'
 import {useEffect, useState} from "react";
+import {changeLayoutCharacters} from "../scripts";
 export function Characters(props){
 
     const [buffer, setBuffer] = useState([]);
+    const [isLayout, setIsLayout] = useState(false);
 
     const [search,setSearch] = useState("");
     const [array,setArray] = useState([]);
 
 
     async function fetchCharacters (){
-     const response = await fetch("http://173.249.20.184:7001/api/Characters/GetAll?PageNumber=1&PageSize=20")
+     const response = await fetch("http://173.249.20.184:7001/api/Characters/GetAll?PageNumber=1&PageSize=100")
         const responseJson = response.json()
         await responseJson.then(data => {
             const responseArray = data.data;
@@ -31,9 +33,6 @@ export function Characters(props){
                     />
                 );
             });
-
-
-
         })
      }
 
@@ -44,11 +43,14 @@ export function Characters(props){
             if(buffer.length === 0) {
                 await fetchCharacters();
                 setArray(buffer);
+                changeLayoutCharacters(isLayout)
             }
             if (search) {
                 let filteredArray = buffer.filter(item => item.props.fullName.toLocaleLowerCase().includes(search.trim().toLocaleLowerCase()));
+                changeLayoutCharacters(isLayout)
                 setArray(filteredArray);
             }else{
+                changeLayoutCharacters(isLayout)
                 setArray(buffer);
             }
         },[search]);
@@ -56,11 +58,12 @@ export function Characters(props){
 
 
     return (
-        <div className="container">            <Search placeHolder="Найти Персонажа" callback={setSearch}/>
+        <div className="container">
+            <Search placeHolder="Найти Персонажа" callback={setSearch}/>
             <div className="characters">
                 <div className="characters__info">
                         <div className="characters__counter">Всего Персонажей:  {array.length}</div>
-                        <div className="characters__layout"><img src="assets/images/layout-icon.svg" alt=""/></div>
+                        <div className="characters__layout"><img src="assets/images/layout-icon.svg" alt="" onClick={() => {setIsLayout(!isLayout); changeLayoutCharacters(isLayout)}}/></div>
                 </div>
 
                 <div className="characters__blocks">

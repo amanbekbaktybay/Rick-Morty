@@ -29,21 +29,17 @@ export function LogIn(props){
                 }
             }).then((response) => {
                 if (response.ok) {
-                    console.log("successfully");
                     sessionStorage.setItem("isLoggedIn", "true");
                     sessionStorage.setItem("userName", userName);
                     window.location.assign("/settings");
                 }else {
                     setIsOpen(true);
                 }
-
-
-
             })
         }
         else {
+            setIsOpen(true);
         }
-        setIsOpen(true);
     }
 
 

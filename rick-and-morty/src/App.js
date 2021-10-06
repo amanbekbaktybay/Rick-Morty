@@ -17,14 +17,11 @@ import {Settings} from "./pages/Settings";
 import PublicRoute from "./router/PublickRoutes";
 import PrivateRoute from "./router/PrivateRoutes";
 import {Episodes} from "./pages/Episodes";
+import {CharacterProfile} from "./pages/CharacterProfile";
 
 function App() {
 
-    const changeNavigationIconColor = (idSvg,idTitle) =>
-    {
-        document.getElementById(idSvg).style.color = "#43D049";
-        document.getElementById(idTitle).style.color = "#43D049";
-    }
+
 
     const vh = window.innerHeight/100;
     document.documentElement.style.setProperty('--vh',`${vh}px`);
@@ -41,14 +38,14 @@ function App() {
                         isAuthenticated={isAuthenticated}
                     >
                         <Settings/>
-                        <Navigation/>
+                        <Navigation navNum="1"/>
                     </PrivateRoute>
 
                     <PrivateRoute
                         path="/characters"
                         isAuthenticated={isAuthenticated}
                     >
-                        <Characters/>
+                        <CharacterProfile/>
                         <Navigation/>
                     </PrivateRoute>
 

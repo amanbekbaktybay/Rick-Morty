@@ -11,6 +11,41 @@ export const showOrHidePassword = (elementId) => {
     element.type === "password"?element.type = "text":element.type = "password";
 }
 
+export const changeLayoutCharacters = (isLayout) => {
+    const characterImg = document.getElementsByClassName("character__img");
+    const character = document.getElementsByClassName("character");
+    const info = document.getElementsByClassName("character__info");
+    const characterFullName = document.getElementsByClassName("character__full-name");
+
+    for (let i = 0; i < characterImg.length; i++) {
+        if (isLayout){
+            characterImg[i].classList.add("two-in-line");
+            character[i].classList.add("fl-col");
+            info[i].classList.add("align-center");
+            characterFullName[i].classList.add("txt-stl-character-status")
+        }else{
+            characterImg[i].classList.remove("two-in-line");
+            character[i].classList.remove("fl-col");
+            info[i].classList.remove("align-center");
+            characterFullName[i].classList.remove("txt-stl-character-status")
+        }
+    }
+}
 
 
+export function sortArray(arr){
+
+    let bool = true;
+
+    while (bool){
+        bool = false;
+
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i].props.series > arr[i + 1].props.series){
+                [arr[i],arr[i + 1]] = [arr[i + 1],arr[i]];
+                bool = true;
+            }
+        }
+    }
+}
 

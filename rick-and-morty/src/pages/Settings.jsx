@@ -27,7 +27,11 @@ export function Settings(props){
         <div className="settings container">
             <div className="settings__wrapper">
                 <nav>
-                    <ArrowBack></ArrowBack>
+                    <ArrowBack
+                        callback={() => {
+                            window.history.back();
+                        }}
+                    />
                     <h2>Настройки</h2>
                 </nav>
                 <div className="settings__profile">
