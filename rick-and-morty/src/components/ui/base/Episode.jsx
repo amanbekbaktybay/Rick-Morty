@@ -3,14 +3,15 @@ import {ArrowMore} from "./ArrowMore";
 
 export function Episode(props){
 
+    // console.log(props.episodesData)
     return (
         <div className="episode">
             <div className="episode__wrapper">
-                <img src={props.link} alt="" className="episode__img"/>
+                <img src={props.episodesData["imageName"]} alt="" className="episode__img"/>
                 <div className="episode__info">
-                    <p className="episode__series">Серия {props.series}</p>
-                    <h2 className="episode__name">{props.name}</h2>
-                    <p className="episode__date">{props.date}</p>
+                    <p className="episode__series">Серия {props.episodesData.series}</p>
+                    <h2 className="episode__name">{props.episodesData.name}</h2>
+                    <p className="episode__date">{props.episodesData.premiere}</p>
                 </div>
             </div>
 

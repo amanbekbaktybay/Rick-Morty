@@ -29,10 +29,7 @@ export function Episodes(props){
           responseArray.forEach(item => {
               buffer1.push(
                   <Episode
-                      link={item["imageName"]}
-                      name={item.name}
-                      series={item.series}
-                      date={item["premiere"]}
+                      episodesData={item}
                       key={item.id}
                   />
               );
@@ -45,10 +42,7 @@ export function Episodes(props){
           responseArray.forEach(item => {
               buffer2.push(
                   <Episode
-                      link={item["imageName"]}
-                      name={item.name}
-                      series={item.series}
-                      date={item["premiere"]}
+                      episodesData={item}
                       key={item.id}
                   />
               );
@@ -60,10 +54,7 @@ export function Episodes(props){
           responseArray.forEach(item => {
               buffer3.push(
                   <Episode
-                      link={item["imageName"]}
-                      name={item.name}
-                      series={item.series}
-                      date={item["premiere"]}
+                      episodesData={item}
                       key={item.id}
                   />
               );
@@ -75,10 +66,7 @@ export function Episodes(props){
           responseArray.forEach(item => {
               buffer4.push(
                   <Episode
-                      link={item["imageName"]}
-                      name={item.name}
-                      series={item.series}
-                      date={item["premiere"]}
+                      episodesData={item}
                       key={item.id}
                   />
               );

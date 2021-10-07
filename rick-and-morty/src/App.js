@@ -45,8 +45,8 @@ function App() {
                         path="/characters"
                         isAuthenticated={isAuthenticated}
                     >
-                        <CharacterProfile/>
-                        <Navigation/>
+                        {/*<CharacterProfile/>*/}
+                        <Characters/>
                     </PrivateRoute>
 
                     <PrivateRoute

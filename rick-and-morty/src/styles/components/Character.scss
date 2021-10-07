@@ -8,6 +8,9 @@
   margin: 24px 16px;
   height: 75px;
   flex-direction: row;
+  &__wrapper{
+    display: flex;
+  }
   &__status{
     font-family: 'Roboto',sans-serif;
     font-style: normal;

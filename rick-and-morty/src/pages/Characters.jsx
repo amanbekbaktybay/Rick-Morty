@@ -4,6 +4,8 @@ import {Navigation} from "../components/ui/base/Navigation";
 import '../styles/components/Characters.scss'
 import {useEffect, useState} from "react";
 import {changeLayoutCharacters} from "../scripts";
+import {CharacterProfile} from "./CharacterProfile";
+import PrivateRoute from "../router/PrivateRoutes";
 export function Characters(props){
 
     const [buffer, setBuffer] = useState([]);
@@ -11,7 +13,8 @@ export function Characters(props){
 
     const [search,setSearch] = useState("");
     const [array,setArray] = useState([]);
-
+    const [isCharacterProfile,setIsCharacterProfile] = useState(false);
+    const [characterProfileProps,setCharacterProfileProps] = useState({});
 
     async function fetchCharacters (){
      const response = await fetch("http://173.249.20.184:7001/api/Characters/GetAll?PageNumber=1&PageSize=100")
@@ -20,16 +23,14 @@ export function Characters(props){
             const responseArray = data.data;
 
             responseArray.forEach(item => {
-                const status = item.status?"живой":"мертвый";
-                const gender = item.gender?"женский":"мужской";
                 buffer.push(
                     <Character
-                        link={item["imageName"]}
-                        status={status}
-                        fullName={item.fullName}
-                        gender={gender}
-                        species={item.race}
+                        characterData={item}
                         key={item.id}
+                        callback={characterProfileProps => {
+                            setCharacterProfileProps(item);
+                            setIsCharacterProfile(!isCharacterProfile);
+                        }}
                     />
                 );
             });
@@ -46,7 +47,7 @@ export function Characters(props){
                 changeLayoutCharacters(isLayout)
             }
             if (search) {
-                let filteredArray = buffer.filter(item => item.props.fullName.toLocaleLowerCase().includes(search.trim().toLocaleLowerCase()));
+                let filteredArray = buffer.filter(item => item.props.characterData.fullName.toLocaleLowerCase().includes(search.trim().toLocaleLowerCase()));
                 changeLayoutCharacters(isLayout)
                 setArray(filteredArray);
             }else{
@@ -58,19 +59,36 @@ export function Characters(props){
 
 
     return (
-        <div className="container">
-            <Search placeHolder="Найти Персонажа" callback={setSearch}/>
-            <div className="characters">
-                <div className="characters__info">
-                        <div className="characters__counter">Всего Персонажей:  {array.length}</div>
-                        <div className="characters__layout"><img src="assets/images/layout-icon.svg" alt="" onClick={() => {setIsLayout(!isLayout); changeLayoutCharacters(isLayout)}}/></div>
-                </div>
 
-                <div className="characters__blocks">
-                        {array}
-                </div>
+            <div className="container">
+                {
+                    isCharacterProfile?<CharacterProfile
+                            characterProfiledata={characterProfileProps}
+                            callback={() => {setIsCharacterProfile(!isCharacterProfile)}}
+                        />
+                        :
+                    <section>
+                        <Search placeHolder="Найти Персонажа" callback={setSearch}/>
+                        <div className="characters">
+                            <div className="characters__info">
+                                <div className="characters__counter">Всего Персонажей: {array.length}</div>
+                                <div className="characters__layout">
+                                    <img src="assets/images/layout-icon.svg" alt="" onClick={() => {
+                                        setIsLayout(!isLayout);
+                                        changeLayoutCharacters(isLayout)
+                                    }}/>
+                                </div>
+                            </div>
+
+                            <div className="characters__blocks">
+                                {array}
+                            </div>
+                        </div>
+                        <Navigation/>
+                    </section>
+                }
             </div>
-        </div>
+
     );
 
 }

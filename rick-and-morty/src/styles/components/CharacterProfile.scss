@@ -3,18 +3,26 @@
 
 .character-profile{
   overflow-y: scroll;
-  max-height: calc((var(--vh, 1vh) * 100) - 60px);
-  min-height: calc((var(--vh, 1vh) * 100) - 60px);
+  max-height: calc((var(--vh, 1vh) * 100));
+  min-height: calc((var(--vh, 1vh) * 100));
+  &__arrow-back{
+    position: absolute;
+  }
 }
 .person{
-    min-height: calc((var(--vh, 1vh) * 100) - 60px);
-    max-height: calc((var(--vh, 1vh) * 100) - 60px);
+    min-height: calc((var(--vh, 1vh) * 100));
+    max-height: calc((var(--vh, 1vh) * 100));
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-bottom: 2px solid #152A3A;
   padding-bottom: 10px;
+  &__arrow-back-wrapper{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
   &__ava{
     min-height: calc((var(--vh, 1vh) * 50));
     max-height: calc((var(--vh, 1vh) * 50));
@@ -49,8 +57,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    max-height: calc((var(--vh, 1vh) * 50) - 60px);
-    min-height: calc((var(--vh, 1vh) * 50) - 60px);
+    max-height: calc((var(--vh, 1vh) * 50));
+    min-height: calc((var(--vh, 1vh) * 50));
     h1{
       font-family: 'Roboto',sans-serif;
       font-style: normal;
@@ -120,8 +128,6 @@
 
 .episodes-visited{
   width: 96%;
-  //min-height: calc((var(--vh, 1vh) * 50) - 60px);
-  //max-height: calc((var(--vh, 1vh) * 50) - 60px);
   margin: 0 auto;
   &__title{
     display: flex;
