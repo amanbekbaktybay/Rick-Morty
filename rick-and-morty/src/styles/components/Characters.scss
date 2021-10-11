@@ -12,6 +12,7 @@
     flex-direction: column;
     width: 100%;
     max-height: calc(100% - 60px);
+    align-items: center;
     &__counter{
       font-family: 'Roboto', sans-serif;
       font-style: normal;
@@ -28,7 +29,7 @@
       overflow-y: auto;
       max-height: calc(var(--vh, 1vh) * 77);
       scroll-snap-type: y mandatory;
-      max-width: 100%;
+      max-width: 96%;
       overflow-x: hidden;
     }
     &__info{

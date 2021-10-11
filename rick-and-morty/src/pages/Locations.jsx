@@ -4,12 +4,15 @@ import {Location} from "../components/ui/base/Location";
 import {Navigation} from "../components/ui/base/Navigation";
 import {useEffect, useState} from "react";
 import {Character} from "../components/ui/base/Character";
+import {LocationProfile} from "./LocationProfile";
 
 export function Locations(props){
 
     const [buffer,setBuffer] = useState([]);
     const [array,setArray] = useState([]);
     const [search,setSearch] = useState("");
+    const [isLocationProfile,setIsLocationProfile] = useState(false);
+    const [locationProfileProps,setLocationProfileProps] = useState({});
 
     async function fetchLocations (){
         const response = await fetch("http://173.249.20.184:7001/api/Locations/GetAll?PageNumber=1&PageSize=13")
@@ -20,11 +23,12 @@ export function Locations(props){
             responseArray.forEach(item => {
                 buffer.push(
                     <Location
-                        link={item["imageName"]}
-                        fullName={item.name}
-                        type={item.type}
-                        measurements={item.measurements}
+                        locationData={item}
                         key={item.id}
+                        callback={() => {
+                            setLocationProfileProps(item);
+                            setIsLocationProfile(!isLocationProfile);
+                        }}
                     />
                 );
             });
@@ -32,6 +36,8 @@ export function Locations(props){
             console.log("data has taken up!")
         })
     }
+
+
 
 
     useEffect(
@@ -50,19 +56,26 @@ export function Locations(props){
 
     return(
         <div className="locations">
-            <Search placeHolder="Найти локацию" callback={setSearch}/>
-            <div className="locations__wrapper">
+            {
+                isLocationProfile?<LocationProfile locationProfileData={locationProfileProps} callback={()=>{setIsLocationProfile(!isLocationProfile)}}/>
+                :
+                <section>
+                    <Search placeHolder="Найти локацию" callback={setSearch}/>
+                    <div className="locations__wrapper">
 
-                <div className="locations__info">
-                    <div className="locations__counter">Всего Локаций:  {array.length}</div>
+                        <div className="locations__info">
+                            <div className="locations__counter">Всего Локаций: {array.length}</div>
 
-                </div>
-                <div className="locations__location-block">
-                    {array}
-                </div>
+                        </div>
+                        <div className="locations__location-block">
+                            {array}
+                        </div>
 
-            </div>
-
+                    </div>
+                    <Navigation/>
+                </section>
+            }
         </div>
+
     );
 }

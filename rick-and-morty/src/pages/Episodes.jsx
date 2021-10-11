@@ -95,7 +95,8 @@ export function Episodes(props){
           }
         }
 
-    },[search])
+    },[search]);
+
     return(
         <div className="container">
             <Search placeHolder="Найти эпизод" callback={(value) => {setSearch(value)}}/>

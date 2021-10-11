@@ -24,7 +24,7 @@ export function Settings(props){
 
 
     return(
-        <div className="settings container">
+        < div className="settings container">
             <div className="settings__wrapper">
                 <nav>
                     <ArrowBack

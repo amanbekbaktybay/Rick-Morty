@@ -2,6 +2,7 @@ import "../styles/components/CharacterProfile.scss";
 import {Episode} from "../components/ui/base/Episode";
 import {Episodes} from "./Episodes";
 import {ArrowBack} from "../components/ui/base/ArrowBack";
+import {Link} from "react-router-dom";
 
 export function CharacterProfile(props){
 
@@ -11,7 +12,7 @@ export function CharacterProfile(props){
     const episodes = [];
 
 
-        characterProfileData.episodes.forEach(item => {
+        characterProfileData.episodes?.forEach(item => {
             episodes.push(
             <Episode
                 episodesData={item}
@@ -26,19 +27,17 @@ export function CharacterProfile(props){
     return(
         <div className="container">
             <div className="character-profile">
+                <div className="character-profile__arrow-back-wrapper">
+                    <ArrowBack className="character-profile__arrow-back"
+                               callback={()=>{
+                                   props.callback()
+                               }}
+                    />
+                </div>
                 <div className="person">
                     <div className="person__ava">
                         <div className="person__ava-bg">
                             <div className="person__ava-bg-wrapper">
-                                <div className="person__arrow-back-wrapper">
-                                    <ArrowBack className="character-profile__arrow-back"
-                                               callback={()=>{
-                                                   props.callback()
-                                               }}
-                                    />
-                                </div>
-
-
                                 <img src={characterProfileData.imageName} alt=""/>
                             </div>
                         </div>
@@ -66,7 +65,7 @@ export function CharacterProfile(props){
 
                         <div className="person__place-birth">
                             <h5 className="person__heading">Место рождение</h5>
-                            <p className="person__after-heading">{characterProfileData.location.name}</p>
+                            <p className="person__after-heading">{characterProfileData.location?.name}</p>
                         </div>
                         <div className="person__location">
                             <h5 className="person__heading">Местоположение</h5>
@@ -79,6 +78,7 @@ export function CharacterProfile(props){
                         <h2>Эпизоды</h2>
                         <p>Все эпизоды</p>
                     </div>
+
                     <div className="episodes-visited__block">
                         {episodes}
                     </div>

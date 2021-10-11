@@ -18,6 +18,7 @@ import PublicRoute from "./router/PublickRoutes";
 import PrivateRoute from "./router/PrivateRoutes";
 import {Episodes} from "./pages/Episodes";
 import {CharacterProfile} from "./pages/CharacterProfile";
+import {LocationProfile} from "./pages/LocationProfile";
 
 function App() {
 
@@ -45,7 +46,6 @@ function App() {
                         path="/characters"
                         isAuthenticated={isAuthenticated}
                     >
-                        {/*<CharacterProfile/>*/}
                         <Characters/>
                     </PrivateRoute>
 
@@ -54,7 +54,7 @@ function App() {
                         isAuthenticated={isAuthenticated}
                     >
                         <Locations/>
-                        <Navigation/>
+                        {/*<LocationProfile/>*/}
                     </PrivateRoute>
 
                     <PrivateRoute

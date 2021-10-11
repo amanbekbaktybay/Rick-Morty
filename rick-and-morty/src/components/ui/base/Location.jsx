@@ -2,14 +2,15 @@ import "../../../styles/components/Location.scss"
 
 export function Location(props){
 
+    const locationData = props.locationData;
     return(
-        <div className="location">
+        <div className="location" onClick={()=>{props.callback()}}>
             <div className="location__img">
-                <img src={props.link} alt=""/>
+                <img src={locationData.imageName} alt=""/>
             </div>
             <div className="location__title">
-                <h3>{props.fullName}</h3>
-                <p>{props.type} - {props.measurements}</p>
+                <h3>{locationData.name}</h3>
+                <p>{locationData.type} - {locationData.measurements}</p>
             </div>
         </div>
     );

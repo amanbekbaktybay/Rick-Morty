@@ -1,4 +1,4 @@
-// import "../../../styles/components/arrow-more.scss"
+import "../../../styles/components/arrow-more.scss"
 
 export function ArrowMore(props){
 

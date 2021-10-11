@@ -5,8 +5,13 @@
   overflow-y: scroll;
   max-height: calc((var(--vh, 1vh) * 100));
   min-height: calc((var(--vh, 1vh) * 100));
-  &__arrow-back{
-    position: absolute;
+
+  &__arrow-back-wrapper{
+      position: fixed;
+      top: 30px;
+      left: 25px;
+      width: 100%;
+      z-index: 15;
   }
 }
 .person{
@@ -18,11 +23,7 @@
     align-items: center;
     border-bottom: 2px solid #152A3A;
   padding-bottom: 10px;
-  &__arrow-back-wrapper{
-    position: absolute;
-    top: 30px;
-    left: 30px;
-  }
+
   &__ava{
     min-height: calc((var(--vh, 1vh) * 50));
     max-height: calc((var(--vh, 1vh) * 50));

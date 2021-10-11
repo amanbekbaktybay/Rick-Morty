@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .character{
-  max-width: 375px;
+  max-width: 100%;
+  margin: 24px 0;
+  height: 75px;
   display: flex;
   align-items: center;
-  scroll-snap-align: start;
-  margin: 24px 16px;
-  height: 75px;
-  flex-direction: row;
+  justify-content: space-between;
+
   &__wrapper{
+    max-width: 100%;
     display: flex;
+    align-items: center;
+    scroll-snap-align: start;
+    flex-direction: row;
+    height: 100%;
   }
+
   &__status{
     font-family: 'Roboto',sans-serif;
     font-style: normal;

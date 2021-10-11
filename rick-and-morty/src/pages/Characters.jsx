@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import {changeLayoutCharacters} from "../scripts";
 import {CharacterProfile} from "./CharacterProfile";
 import PrivateRoute from "../router/PrivateRoutes";
+import {Link} from "react-router-dom";
 export function Characters(props){
 
     const [buffer, setBuffer] = useState([]);
@@ -27,7 +28,7 @@ export function Characters(props){
                     <Character
                         characterData={item}
                         key={item.id}
-                        callback={characterProfileProps => {
+                        callback={() => {
                             setCharacterProfileProps(item);
                             setIsCharacterProfile(!isCharacterProfile);
                         }}
@@ -62,7 +63,8 @@ export function Characters(props){
 
             <div className="container">
                 {
-                    isCharacterProfile?<CharacterProfile
+                    isCharacterProfile?
+                        <CharacterProfile
                             characterProfiledata={characterProfileProps}
                             callback={() => {setIsCharacterProfile(!isCharacterProfile)}}
                         />
@@ -83,6 +85,7 @@ export function Characters(props){
                             <div className="characters__blocks">
                                 {array}
                             </div>
+
                         </div>
                         <Navigation/>
                     </section>
