@@ -3,6 +3,8 @@ import {Search} from "../components/ui/base/Search";
 import {Episode} from "../components/ui/base/Episode";
 import {useEffect, useState} from "react";
 import {sortArray} from "../scripts";
+import {EpisodesProfile} from "./EpisodesProfile";
+import {Navigation} from "../components/ui/base/Navigation";
 
 export function Episodes(props){
 
@@ -14,6 +16,9 @@ export function Episodes(props){
     const [buffer4,setBuffer4] = useState([]);
 
     const [season,setSeason] = useState(1);
+
+    const [isEpisodesProfile,setIsEpisodesProfile] = useState(false);
+    const [episodesProfileProps,setEpisodesProfileProps] = useState({});
 
 
     const [search,setSearch] = useState("");
@@ -31,6 +36,10 @@ export function Episodes(props){
                   <Episode
                       episodesData={item}
                       key={item.id}
+                      callback={() => {
+                          setEpisodesProfileProps(item);
+                          setIsEpisodesProfile(!isEpisodesProfile);
+                      }}
                   />
               );
           });
@@ -44,6 +53,10 @@ export function Episodes(props){
                   <Episode
                       episodesData={item}
                       key={item.id}
+                      callback={() => {
+                          setEpisodesProfileProps(item);
+                          setIsEpisodesProfile(!isEpisodesProfile);
+                      }}
                   />
               );
           });
@@ -56,6 +69,10 @@ export function Episodes(props){
                   <Episode
                       episodesData={item}
                       key={item.id}
+                      callback={() => {
+                          setEpisodesProfileProps(item);
+                          setIsEpisodesProfile(!isEpisodesProfile);
+                      }}
                   />
               );
           });
@@ -68,6 +85,10 @@ export function Episodes(props){
                   <Episode
                       episodesData={item}
                       key={item.id}
+                      callback={() => {
+                          setEpisodesProfileProps(item);
+                          setIsEpisodesProfile(!isEpisodesProfile);
+                      }}
                   />
               );
           });
@@ -99,59 +120,72 @@ export function Episodes(props){
 
     return(
         <div className="container">
-            <Search placeHolder="Найти эпизод" callback={(value) => {setSearch(value)}}/>
-            <div className="episodes">
-                <div className="episodes__seasons">
-                    <span className="episodes__season"
-                          onClick={() => {
-                              setEpisodes(buffer1)
-                              setSeason(1);
+            {
+                isEpisodesProfile?
+                    <EpisodesProfile
+                        callback={() => {setIsEpisodesProfile(!isEpisodesProfile)}}
+                        episodesData={episodesProfileProps}
+                    />
+                    :
+                <section>
+                    <Search placeHolder="Найти эпизод" callback={(value) => {
+                        setSearch(value)
+                    }}/>
+                    <div className="episodes">
+                        <div className="episodes__seasons">
+                        <span className="episodes__season"
+                              onClick={() => {
+                                  setEpisodes(buffer1)
+                                  setSeason(1);
+                              }}>
+                            <p className="episodes__season-num">
+                                СЕЗОН 1
+                            </p>
+                        </span>
+
+                            <span className="episodes__season" onClick={() => {
+                                setEpisodes(buffer2)
+                                setSeason(2);
                             }}>
-                        <p className="episodes__season-num">
-                            СЕЗОН 1
-                        </p>
-                    </span>
+                            <p className="episodes__season-num">
+                                СЕЗОН 2
+                            </p>
+                        </span>
 
-                     <span className="episodes__season" onClick={() => {
-                         setEpisodes(buffer2)
-                         setSeason(2);
-                     }}>
-                        <p className="episodes__season-num">
-                            СЕЗОН 2
-                        </p>
-                    </span>
+                            <span className="episodes__season" onClick={() => {
+                                setEpisodes(buffer3)
+                                setSeason(3);
+                            }}>
+                            <p className="episodes__season-num">
+                                СЕЗОН 3
+                            </p>
+                        </span>
 
-                     <span className="episodes__season" onClick={() => {
-                         setEpisodes(buffer3)
-                         setSeason(3);
-                     }}>
-                        <p className="episodes__season-num">
-                            СЕЗОН 3
-                        </p>
-                    </span>
+                            <span className="episodes__season" onClick={() => {
+                                setEpisodes(buffer4)
+                                setSeason(4);
+                            }}>
+                            <p className="episodes__season-num">
+                                СЕЗОН 4
+                            </p>
+                        </span>
+                            <span className="episodes__season" onClick={() => {
+                                setEpisodes(buffer4)
+                                setSeason(4);
+                            }}>
+                            <p className="episodes__season-num">
+                                СЕЗОН 4
+                            </p>
+                        </span>
+                        </div>
 
-                    <span className="episodes__season" onClick={() => {
-                        setEpisodes(buffer4)
-                        setSeason(4);
-                    }}>
-                        <p className="episodes__season-num">
-                            СЕЗОН 4
-                        </p>
-                    </span>
-                    <span className="episodes__season" onClick={() => {
-                        setEpisodes(buffer4)
-                        setSeason(4);
-                    }}>
-                        <p className="episodes__season-num">
-                            СЕЗОН 4
-                        </p>
-                    </span>
-                </div>
-
-                <div className="episodes__block">
-                    {episodes}
-                </div>
-            </div>
+                        <div className="episodes__block">
+                            {episodes}
+                        </div>
+                    </div>
+                    <Navigation iconNumber={3}/>
+                </section>
+            }
 
         </div>
     );

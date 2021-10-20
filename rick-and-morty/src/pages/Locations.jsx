@@ -32,8 +32,6 @@ export function Locations(props){
                     />
                 );
             });
-
-            console.log("data has taken up!")
         })
     }
 
@@ -72,7 +70,7 @@ export function Locations(props){
                         </div>
 
                     </div>
-                    <Navigation/>
+                    <Navigation iconNumber={2}/>
                 </section>
             }
         </div>

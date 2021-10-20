@@ -2,6 +2,7 @@ import "../styles/components/Settings.scss";
 import {ArrowBack} from "../components/ui/base/ArrowBack";
 import {Link} from "react-router-dom";
 import {useState} from "react";
+import {Navigation} from "../components/ui/base/Navigation";
 
 export function Settings(props){
 
@@ -67,6 +68,7 @@ export function Settings(props){
                     <h2>Версия Приложение</h2>
                     <p>Rick & Morty  v1.0.0</p>
                 </div>
+                <Navigation iconNumber={4}/>
             </div>
         </div>
     );

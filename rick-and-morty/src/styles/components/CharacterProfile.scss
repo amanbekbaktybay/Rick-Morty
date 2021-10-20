@@ -90,6 +90,8 @@
     line-height: 150%;
     letter-spacing: 0.5px;
     color: #FFFFFF;
+    max-height: calc(var(--vh,1vh)*12);
+    overflow-y: auto;
   }
   &__gender-Race{
     display: flex;

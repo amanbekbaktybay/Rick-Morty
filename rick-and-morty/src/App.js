@@ -19,6 +19,7 @@ import PrivateRoute from "./router/PrivateRoutes";
 import {Episodes} from "./pages/Episodes";
 import {CharacterProfile} from "./pages/CharacterProfile";
 import {LocationProfile} from "./pages/LocationProfile";
+import {EpisodesProfile} from "./pages/EpisodesProfile";
 
 function App() {
 
@@ -39,7 +40,6 @@ function App() {
                         isAuthenticated={isAuthenticated}
                     >
                         <Settings/>
-                        <Navigation navNum="1"/>
                     </PrivateRoute>
 
                     <PrivateRoute
@@ -54,7 +54,6 @@ function App() {
                         isAuthenticated={isAuthenticated}
                     >
                         <Locations/>
-                        {/*<LocationProfile/>*/}
                     </PrivateRoute>
 
                     <PrivateRoute
@@ -62,7 +61,6 @@ function App() {
                         isAuthenticated={isAuthenticated}
                     >
                         <Episodes/>
-                        <Navigation/>
                     </PrivateRoute>
 
                     <PublicRoute

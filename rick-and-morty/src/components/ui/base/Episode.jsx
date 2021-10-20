@@ -5,7 +5,7 @@ export function Episode(props){
 
     // console.log(props.episodesData)
     return (
-        <div className="episode">
+        <div className="episode" onClick={() => {props.callback()}}>
             <div className="episode__wrapper">
                 <img src={props.episodesData["imageName"]} alt="" className="episode__img"/>
                 <div className="episode__info">

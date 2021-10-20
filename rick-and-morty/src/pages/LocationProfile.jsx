@@ -10,7 +10,7 @@ export function LocationProfile(props){
 
     const characters = []
     const [isCharacterProfile,setIsCharacterProfile] = useState(false);
-    const [characterProps,setCharacterProps] = useState({});
+    // const [characterProps,setCharacterProps] = useState({});
     const [characterProfileProps,setCharacterProfileProps] = useState({});
     const characterPropsById = async (id)=> {
         const response =  await fetch(`http://173.249.20.184:7001/api/Characters/GetById?Id=${id}`).then(res => res);

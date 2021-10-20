@@ -17,6 +17,8 @@ export function Characters(props){
     const [isCharacterProfile,setIsCharacterProfile] = useState(false);
     const [characterProfileProps,setCharacterProfileProps] = useState({});
 
+
+
     async function fetchCharacters (){
      const response = await fetch("http://173.249.20.184:7001/api/Characters/GetAll?PageNumber=1&PageSize=100")
         const responseJson = response.json()
@@ -87,7 +89,7 @@ export function Characters(props){
                             </div>
 
                         </div>
-                        <Navigation/>
+                        <Navigation iconNumber={1}/>
                     </section>
                 }
             </div>

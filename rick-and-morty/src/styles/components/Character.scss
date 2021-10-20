@@ -13,8 +13,8 @@
     display: flex;
     align-items: center;
     scroll-snap-align: start;
-    flex-direction: row;
     height: 100%;
+    flex-direction: row;
   }
 
   &__status{
@@ -72,12 +72,13 @@
 
 .fl-col{
   flex-direction: column;
+}
+.hl-width{
   height: 250px;
   width: 50%;
   display: inline-block;
   margin: 0;
 }
-
 .align-center{
    text-align: center;
   height: 65px;

@@ -14,18 +14,21 @@ export const showOrHidePassword = (elementId) => {
 export const changeLayoutCharacters = (isLayout) => {
     const characterImg = document.getElementsByClassName("character__img");
     const character = document.getElementsByClassName("character");
+    const characterWrapper = document.getElementsByClassName("character__wrapper");
     const info = document.getElementsByClassName("character__info");
     const characterFullName = document.getElementsByClassName("character__full-name");
 
     for (let i = 0; i < characterImg.length; i++) {
         if (isLayout){
             characterImg[i].classList.add("two-in-line");
-            character[i].classList.add("fl-col");
+            characterWrapper[i].classList.add("fl-col");
+            character[i].classList.add("hl-width");
             info[i].classList.add("align-center");
             characterFullName[i].classList.add("txt-stl-character-status")
         }else{
             characterImg[i].classList.remove("two-in-line");
-            character[i].classList.remove("fl-col");
+            characterWrapper[i].classList.remove("fl-col");
+            character[i].classList.remove("hl-width");
             info[i].classList.remove("align-center");
             characterFullName[i].classList.remove("txt-stl-character-status")
         }

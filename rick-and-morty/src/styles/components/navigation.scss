@@ -4,6 +4,9 @@ $theme-bg-nav-color: #152A3A;
 .wrapper{
   width: 100%;
 }
+*{
+  text-decoration: none;
+}
 .navigation{
   background-color: $theme-bg-nav-color;
   display: flex;
@@ -18,12 +21,11 @@ $theme-bg-nav-color: #152A3A;
     fill: #43D049;
   }
   &__title{
-    font-family: Roboto;
+    font-family: 'Roboto',sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
-    /* identical to box height, or 133% */
     color: #5B6975;
     text-align: center;
     letter-spacing: 0.5px;
